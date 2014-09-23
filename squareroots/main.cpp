@@ -1,8 +1,7 @@
-#include <iostream>
 #include <stdio.h>
 #include <math.h>
 
-using namespace std;
+
 
 void writesquareroots(double* squareroots=new double[4]) //function that writes answers
 {
@@ -10,29 +9,29 @@ void writesquareroots(double* squareroots=new double[4]) //function that writes 
     {
         if (squareroots[0]==3)
         {
-            cout<<"LINEAR EQUATION,X="<<squareroots[2];
+            printf("LINEAR EQUATION,X=%lg",squareroots[2]);
         }
-        cout<<"NO ROOTS";
+        printf("NO ROOTS");
     }
     if (squareroots[0]==0)
     {
-        cout<<"NO ROOTS,BECAUSE DISCRIMINANT="<<squareroots[1]<<"<0";
+        printf("NO ROOTS,BECAUSE DISCRIMINANT=%lg<0",squareroots[1]);
     }
     if (squareroots[0]==1)
     {
-        cout<<"SINGLE ROOT,D=0,  X="<<squareroots[2];
+        printf("SINGLE ROOT,D=0,  X=%lg",squareroots[2]);
     }
     if (squareroots[0]==2)
     {
-        cout<<"TWO ROOTS,D="<<squareroots[1]<<"  X1="<<squareroots[2]<<"  X2="<<squareroots[3];
+        printf("TWO ROOTS,D=%lg   X1=%lg  X2=%lg",squareroots[1],squareroots[2],squareroots[3]);
     }
     if (squareroots[0]==3)
     {
-        cout<<"LINEAR EQUATION,X="<<squareroots[2];
+        printf("LINEAR EQUATION,X=%lg",squareroots[2]);
     }
     if (squareroots[0]==4)
     {
-        cout<<"INFINITY AMOUNT OF ROOTS";
+        printf("INFINITY AMOUNT OF ROOTS");
     }
 }
 
@@ -51,7 +50,7 @@ double readdouble()//function to enter double variable,ignoring trash symbols
 
 
 
-double* getsquareroots(double c, double b,double a)  //not (a,b,c) because variables are entered in reverse order
+double* getsquareroots(double c, double b,double a)  //not (a,b,c) because variables are entered in inverted -----
 //returns array
 //[0]=type of answer(0,1,2-roots amount,3-linear equation,-1-zero roots,4-infinity amount of roots)
 //[1]=discriminant (not always returned,check [0] first)
@@ -118,3 +117,4 @@ int main()
 
     return 0;
 }
+
