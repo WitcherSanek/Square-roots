@@ -1,9 +1,8 @@
-
 #include <stdio.h>
 #include <math.h>
 //Made by Александр Парамонов
-//version 0.0.1 alpha
-//changelog:fixed comments
+//version 0.0.2 alpha
+//changelog:no more returns array
 
 
 void writesquareroots(double* squareroots=new double[4]) //function that writes answers
@@ -53,7 +52,7 @@ double readdouble()//function to enter double variable,ignoring trash symbols
 
 
 
-double* getsquareroots(double c, double b,double a)  //not (a,b,c) because variables are entered in inverted order
+double getsquareroots(double c, double b,double a,double& disc, double& x1, double& x2)  //not (a,b,c) because variables are entered in inverted order
 //returns array
 //[0]=type of answer(0,1,2-roots amount,3-linear equation,-1-zero roots,4-infinity amount of roots)
 //[1]=discriminant (not always returned,check [0] first)
@@ -108,7 +107,10 @@ double* getsquareroots(double c, double b,double a)  //not (a,b,c) because varia
 
         }
     }
-    return returnvalue;
+    disc=returnvalue[1];
+    x1=returnvalue[2];
+    x2=returnvalue[3];
+    return returnvalue[0];
 }
 
 
@@ -116,7 +118,13 @@ double* getsquareroots(double c, double b,double a)  //not (a,b,c) because varia
 
 int main()
 {
-    writesquareroots(getsquareroots(readdouble(),readdouble(),readdouble()));
+    double* squareroots=new double[4];
+    squareroots[0]=-1;
+    squareroots[1]=0;
+    squareroots[2]=0;
+    squareroots[3]=0;
+    squareroots[0]=getsquareroots(readdouble(),readdouble(),readdouble(),squareroots[1],squareroots[2],squareroots[3]);
+    writesquareroots(squareroots);
 
     return 0;
 }
