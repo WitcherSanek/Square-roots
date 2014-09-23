@@ -1,6 +1,9 @@
+
 #include <stdio.h>
 #include <math.h>
-
+//Made by Александр Парамонов
+//version 0.0.1 alpha
+//changelog:fixed comments
 
 
 void writesquareroots(double* squareroots=new double[4]) //function that writes answers
@@ -50,7 +53,7 @@ double readdouble()//function to enter double variable,ignoring trash symbols
 
 
 
-double* getsquareroots(double c, double b,double a)  //not (a,b,c) because variables are entered in inverted -----
+double* getsquareroots(double c, double b,double a)  //not (a,b,c) because variables are entered in inverted order
 //returns array
 //[0]=type of answer(0,1,2-roots amount,3-linear equation,-1-zero roots,4-infinity amount of roots)
 //[1]=discriminant (not always returned,check [0] first)
@@ -117,4 +120,3 @@ int main()
 
     return 0;
 }
-
